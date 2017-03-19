@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ "$1" = "" ]; then
+WDIR=$(pwd)
+PROG=$(ls ${pwd} -t |grep .c|tr -d ".c"|head -1)
+else PROG=$(echo "$1" |tr -d ".c")
+fi
+nano ${PROG}.c
+22 ${PROG}
+

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ "$1" = "" ]; then
+WDIR=$(pwd)
+PROG=$(ls ${pwd} -t |grep .c|tr -d ".c" |head -1)
+else PROG=$(echo "$1" |tr -d ".c")
+fi
+
+#cc -Wall -g ${PROG}.c -o ${PROG} && 23 ${PROG}
+#make clean
+make ${PROG} && 23 ${PROG}

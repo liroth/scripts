@@ -1,0 +1,7 @@
+if [ "$1" = "" ]; then
+message="."
+else
+message="$1"
+fi
+
+git commit -a -m ${message}

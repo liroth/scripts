@@ -1,0 +1,4 @@
+#!/bin/bash
+
+chmod 775 /root/progn/scripts/*
+cp /root/progn/scripts/* /bin/
