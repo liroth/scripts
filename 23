@@ -1,8 +1,9 @@
 #!/bin/bash
 
 if [ "$1" = "" ]; then
-echo "what should I run?"
-exit
+WDIR=$(pwd)
+PROG=$(ls ${pwd} -t |grep .c|tr -d ".c" |head -1)
+else PROG="$1"
 fi
 
-./"$1"
+./${PROG}

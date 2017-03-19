@@ -32,14 +32,15 @@ function p2 {
         echo ""
         echo "21 [file] - edit & compile & run [file] (if no arg, use last changed .c-file, else use specified file)"
         echo "22 [file] - compile & run (if no arg, use last changed .c-file, else use specified file)"
-        echo "23 file - run (needs 1 argument)"
+        echo "23 [file] - run file, or excutable of last changed .c-file ! TBD args for execution!"
+	echo "24 [file] - make [file] and debugg [file] in gdb, if no file specified, use last changed .c"
         echo ""
 }
 
 function p3 {
         echo "3* - git related commands"
         echo ""
-        echo "31 - gets all remote changes for rep in current directory"
+        echo "31 - pulls all remote changes for the repositori in the current directory"
         echo "32 - pushes all changes to github"
         echo "33 [message] - merges all local changes in local rep with [message]"
         echo "! TBD ! 34 [file] - adds [file] to repository, all if no file specified"
