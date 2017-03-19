@@ -1,7 +1,0 @@
-if [ "$1" = "" ]; then
-to_add="*"
-else
-to_add="$1"
-fi
-
-git add ${to_add}

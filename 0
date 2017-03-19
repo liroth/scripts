@@ -1,13 +1,53 @@
+
 #!/bin/bash
 # Shortcut for common commands
 # 0 is used for a list af all further scripts and deeper information if provided with a number for the desired toppic
 
+function p_intro {
+	echo "0* - general linux commands"
+	echo "1* - script handling commands"
+	echo "2* - programming (C) commands"
+	echo "3* - git related commands"
+	echo "*  - not assigned yet"
+	echo ""
+}
+
+function p0 {
+        echo "0* - general linux commands"
+        echo ""
+        echo "01 - not yet written"
+	echo ""
+}
+
+function p1 {
+	echo "1* - script handling commands"
+        echo ""
+        echo "11 - copy all scripts from /root/progn/scripts/ to /bin/ (make them excutable first)"
+        echo "12 [number] - edit script [number] in /root/progn/scripts/"
+        echo ""
+}
+
+function p2 {
+	echo "2* - programming (C) commands"
+        echo ""
+        echo "21 [file] - edit & compile & run [file] (if no arg, use last changed .c-file, else use specified file)"
+        echo "22 [file] - compile & run (if no arg, use last changed .c-file, else use specified file)"
+        echo "23 file - run (needs 1 argument)"
+        echo ""
+}
+
+function p3 {
+        echo "3* - git related commands"
+        echo ""
+        echo "31 - gets all remote changes for rep in current directory"
+        echo "32 - pushes all changes to github"
+        echo "33 [message] - merges all local changes in local rep with [message]"
+        echo "! TBD ! 34 [file] - adds [file] to repository, all if no file specified"
+        echo ""
+}
+
 if [ "$1" = "" ]; then
-echo "0* - general linux commands"
-echo "1* - script handling commands"
-echo "2* - programming (C) commands"
-echo "3* - git related commands"
-echo "*  - not assigned yet"
+p_intro
 exit
 fi
 
@@ -18,37 +58,25 @@ key="$1"
 case $key in
 	-h|--help)
 	echo "help TBD"
-	exit
 	;;
-	-p|--print)
-	echo "text to print ${2} just for practicing purpose"
-	shift
+	a|-a|--all)
+	p_intro
+	p0
+	p1
+	p2
+	p3
 	;;
 	0|-0)
-	echo "0* - general linux commands"
-	echo ""
-	echo "01 - not yet written"
+	p0
 	;;
 	1|-1)
-	echo "1* - script handling commands"
-	echo ""
-	echo "11 - copy all scripts from /root/progn/scripts/ to /bin/ (make them excutable first)"
-	echo "12 [number] - edit script [number] in /root/progn/scripts/"
+	p1
 	;;
 	2|-2)
-	echo "2* - programming (C) commands"
-	echo ""
-	echo "21 [file] - edit & compile & run [file] (if no arg, use last changed .c-file, else use specified file)"
-	echo "22 [file] - compile & run (if no arg, use last changed .c-file, else use specified file)"
-	echo "23 file - run (needs 1 argument)"
+	p2
 	;;
 	3|-3)
-	echo "3* - git related commands"
-	echo ""
-	echo "31 - gets all remote changes for rep in current directory"
-	echo "32 - pushes all changes to github"
-	echo "33 [message] - merges all local changes in local rep with [message]"
-	echo "34 [file] - adds [file] to repository, all if no file specified"
+	p3
 	;;
 	*)
 	echo "unknown option ${key}"
